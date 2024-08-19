@@ -9,6 +9,7 @@ export default function Agenda() {
     </View>
   );
 }
+//arroz com batata
 
 const styles = StyleSheet.create({
   container: {

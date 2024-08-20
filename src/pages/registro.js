@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function Registro() {
+export default function Registro({ navigation }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,6 +10,8 @@ export default function Registro() {
   const handleRegister = () => {
     // Lógica de registro aqui
     alert(`Registrando: ${name}, ${email}`);
+    // Redirecionar para a tela de login após o registro
+    navigation.navigate('Login');
   };
 
   return (

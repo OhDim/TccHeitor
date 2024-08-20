@@ -62,6 +62,12 @@ export default function Atividades() {
     </View>
   );
 
+  const handleDateChange = (text) => {
+    // Permitir apenas números e a barra "/"
+    const formattedText = text.replace(/[^0-9/]/g, '');
+    setDate(formattedText);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Adicionar Atividade</Text>
@@ -75,18 +81,21 @@ export default function Atividades() {
         style={styles.input}
         placeholder="Data (DD/MM/AAAA)"
         value={date}
-        onChangeText={setDate}
+        onChangeText={handleDateChange}
+        keyboardType="numeric"
       />
       <TouchableOpacity style={styles.addButton} onPress={addTask}>
         <Text style={styles.addButtonText}>Adicionar</Text>
       </TouchableOpacity>
 
-      <FlatList
-        data={tasks}
-        renderItem={renderTask}
-        keyExtractor={item => item.id}
-        style={styles.taskList}
-      />
+      <View style={styles.taskListContainer}>
+        <FlatList
+          data={tasks}
+          renderItem={renderTask}
+          keyExtractor={item => item.id}
+          style={styles.taskList}
+        />
+      </View>
     </View>
   );
 }
@@ -111,6 +120,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: '#ddd',
     borderWidth: 1,
+    textAlign: 'center',
   },
   addButton: {
     backgroundColor: '#fff',
@@ -124,6 +134,12 @@ const styles = StyleSheet.create({
     color: '#FF8000',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  taskListContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 10,
+    flex: 1,
   },
   taskList: {
     marginTop: 10,

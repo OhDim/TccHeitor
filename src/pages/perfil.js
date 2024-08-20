@@ -5,6 +5,13 @@ export default function Perfil({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Perfil</Text>
+      
+      <TouchableOpacity
+        style={styles.optionButton}
+        onPress={() => navigation.navigate('Comunicados')} // Navegação para "Meus comunicados"
+      >
+        <Text style={styles.optionText}>Meus comunicados</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.optionButton}
@@ -33,6 +40,8 @@ export default function Perfil({ navigation }) {
       >
         <Text style={styles.optionText}>Meu boletim</Text>
       </TouchableOpacity>
+
+    
     </View>
   );
 }

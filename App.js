@@ -7,10 +7,12 @@ import Login from './src/pages/login';
 import Registro from './src/pages/registro';
 import HomeInside from './src/pages/homeinside';
 import Perfil from './src/pages/perfil';
+import Comunicados from './src/pages/comunicados';
 import Atividades from './src/pages/atividades';
 import Turmas from './src/pages/turmas';
 import Agenda from './src/pages/agenda';
 import Boletim from './src/pages/boletim';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Registro" component={Registro} />
         <Stack.Screen name="HomeInside" component={HomeInside} />
         <Stack.Screen name="Perfil" component={Perfil} />
+        <Stack.Screen name="Comunicados" component={Comunicados} />
         <Stack.Screen name="Atividades" component={Atividades} />
         <Stack.Screen name="Turmas" component={Turmas} />
         <Stack.Screen name="Agenda" component={Agenda} />
